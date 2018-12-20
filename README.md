@@ -25,4 +25,6 @@ Ok, let`s play with you in a game =). He called the Hooked Human. Say the letter
 
 <h3>Об авторе</h3>
 
-Начинающий **Ruby**-разработчик.
+<p>Начинающий <b>Ruby</b>-разработчик.
+<p>Беркович Михаил. 
+<p>combos93@mail.ru

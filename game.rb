@@ -51,7 +51,6 @@ class Game
         @status = 1
       end
     else
-
       @bad_letters << bukva
 
       @errors += 1

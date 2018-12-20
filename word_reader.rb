@@ -1,5 +1,4 @@
 class WordReader
-
   def read_from_file(file_name)
     unless File.exist?(file_name)
       return nil
