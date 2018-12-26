@@ -7,19 +7,24 @@ if Gem.win_platform?
   end
 end
 
-require_relative 'game'
-require_relative 'result_printer'
-require_relative 'word_reader'
-require 'unicode_utils/upcase'
+current_path = '/' + File.dirname(__FILE__)
 
-current_path = './' + File.dirname(__FILE__)
-words_file_name = current_path + '/data/vis_words.txt'
+require_relative 'lib/game'
+require_relative 'lib/result_printer'
+require_relative 'lib/word_reader'
+
+VERSION = "Игра виселица, версия №4.\n\n"
 
 word_reader = WordReader.new
-game = Game.new(word_reader.read_from_file(words_file_name))
-printer = ResultPrinter.new
+words_file_name = "#{__dir__}/data/vis_words.txt"
+word = word_reader.read_from_file(words_file_name)
 
-while game.status == 0
+game = Game.new(word)
+game.version = VERSION
+
+printer = ResultPrinter.new(game)
+
+while game.in_progress?
   printer.print_status(game)
   game.ask_next_letter
 end
